@@ -1,0 +1,23 @@
+.form-group
+  h2 Name
+  input.form-control(name='name', value='#{user.name}', placeholder='Name', type='text', autofocus='')
+  h2 Title
+  input.form-control(name='title', value='#{user.title}', placeholder='Title', type='text', autofocus='')
+
+  h2 Associated Projects
+  ul
+    each project, index in projects
+      li
+        label= project.name
+          - var checked = false
+          each userCheck in project.users
+            if userCheck.id === user.id
+              - checked = true
+          input(type="checkbox" name="addProjects[]" value="#{project.id}" checked=(checked ? "checked" : undefined))
+br
+.control-group
+  input.btn.btn-lg(type='submit', value='Save')
+.control-group
+  // hidden inputs
+  input(type='hidden', name='_csrf', value='#{_csrf}')
+

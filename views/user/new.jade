@@ -1,0 +1,8 @@
+extends ../layout.jade
+
+block content
+  - var user = {name: '', title: '', cleanName:''};
+
+  h1 New User
+  form(action='/user', method='POST')
+    include ./partials/user_form.jade

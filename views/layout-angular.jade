@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(charset='utf-8' name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Angular2 Enabled Template
+    base(href='/')
+    link(rel="stylesheet", href="/styles/importer.css")
+    link(rel='icon', type='image/x-icon', href='favicon.ico')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+  body
+    .container.header
+      a(href="/" class="logo")
+        img(src="http://placehold.it/50x50")
+      ul.nav
+        li
+          a(href="/user") Users
+        li
+          a(href="/project") Projects
+    .container.main
+      block content
+    script(src='/js/dependencies/es6-shim/es6-shim.js')
+    script(src='/js/dependencies/reflect-metadata/Reflect.js')
+    script(src='/js/dependencies/systemjs/dist/system.src.js')
+    script(src='/js/dependencies/zone.js/dist/zone.js')
+    script(src='/js/client/system-config.js')
+    script.
+      System.import('/js/client/system-config.js').then(function () {
+        System.import('main');
+      }).catch(console.error.bind(console));

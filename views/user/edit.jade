@@ -1,0 +1,6 @@
+extends ../layout.jade
+
+block content
+  h2 Edit this user's details
+  form(action='/user/'+user.cleanName, method='POST')
+    include ./partials/user_form.jade

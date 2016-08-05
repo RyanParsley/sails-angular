@@ -1,0 +1,11 @@
+.form-group
+  input.form-control(name='name', value='#{project.name}', placeholder='Name', type='text', autofocus='')
+  textarea(name='description', value='#{project.description}', placeholder='Description', autofocus='')
+    | #{project.description}
+br
+.control-group
+  input.btn.btn-lg(type='submit', value='Save')
+.control-group
+  // hidden inputs
+  input(type='hidden', name='_csrf', value='#{_csrf}')
+

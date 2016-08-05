@@ -8,6 +8,8 @@ A sensible starting point with Angular2 on sails
 npm install
 ```
 
+Change your database connections in `config/connections`
+
 ### Pre install (potientially optional)
 
 If you don't have sails installed, install it globally for convinience commands to work

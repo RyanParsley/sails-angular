@@ -18,6 +18,7 @@ module.exports = function(grunt) {
     'clean:dev',
     'jst:dev',
     'sass:dev',
+    'webpack',
     'pug',
     'copy:dev',
     'coffee:dev'

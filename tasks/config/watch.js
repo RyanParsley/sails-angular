@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       files: ['client/**/*.ts'],
 
       // When assets are changed:
-      tasks: ['ts' ],
+      tasks: ['webpack' ],
       options: {
         livereload: true
       }

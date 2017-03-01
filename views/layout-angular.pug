@@ -18,13 +18,7 @@ html
         li
           a(href="/project") Projects
     .container.main
-      block content
-    script(src='/js/dependencies/es6-shim/es6-shim.js')
-    script(src='/js/dependencies/reflect-metadata/Reflect.js')
-    script(src='/js/dependencies/systemjs/dist/system.src.js')
-    script(src='/js/dependencies/zone.js/dist/zone.js')
-    script(src='/js/client/system-config.js')
-    script.
-      System.import('/js/client/system-config.js').then(function () {
-        System.import('main');
-      }).catch(console.error.bind(console));
+      app-root
+        block content
+    script(src='/js/polyfills.js')
+    script(src='/js/app.js')

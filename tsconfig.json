@@ -1,14 +1,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./tmp/public/js",
-    "sourceMap": true,
-    "declaration": false,
+    "outDir": ".tmp/public/js",
+    "target": "es5",
+    "module": "commonjs",
     "moduleResolution": "node",
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "es2016"
-    ]
+    "lib": [ "es2015", "dom" ],
+    "suppressImplicitAnyIndexErrors": true
   }
 }

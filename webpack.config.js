@@ -99,6 +99,9 @@ module.exports = function makeWebpackConfig() {
         loader: 'file-loader?name=fonts/[name].[hash].[ext]?'
       },
 
+      // Support for pug
+      { test: /\.pug$/, loader: 'pug-ng-html-loader' },
+
       // Support for *.json files.
       {test: /\.json$/, loader: 'json-loader'},
 

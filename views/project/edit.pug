@@ -1,0 +1,6 @@
+extends ../layout.pug
+
+block content
+  h2 Edit this Project
+  form(action='/project/'+ project.cleanName, method='POST')
+    include ./partials/project_form.pug

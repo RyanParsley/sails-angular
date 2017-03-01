@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block content
+  h1
+    = user.name
+  h2 Projects
+  if user.projects.length
+    ul.projects
+      each project in user.projects
+        li= project.name
+  else
+    p Not associated with any projects
+
+  a(class='btn btn-sm btn-warning' href='/user/#{ user.cleanName }/edit') Edit
+  form(action='/user/#{user.cleanName}/delete' class="inline-form" method="post")
+    input(class="btn btn-danger btn-sm" type="submit" value="Delete" onclick="return ConfirmDelete()")
+    input( type='hidden' name='_csrf' value='#{ _csrf }')

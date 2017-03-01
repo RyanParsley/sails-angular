@@ -1,8 +1,0 @@
-extends ../layout.jade
-
-block content
-  - var project = {name: '', cleanName:'', description: '', markup: 'markdown'};
-
-  h1 New Project
-  form(action='/project', method='POST')
-    include ./partials/project_form.jade

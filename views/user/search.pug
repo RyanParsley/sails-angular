@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block content
+  h1 Search Results
+
+  table.table
+    thead
+      tr
+        th Name
+        th Title
+    tbody
+      each user in users
+        tr
+          td
+            a(href="/user/#{user.cleanName}")
+              = user.name
+          td= user.title

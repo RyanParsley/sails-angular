@@ -1,0 +1,19 @@
+extends ../layout.pug
+
+block content
+  h1
+    = project.name
+  div= project.description
+
+  h2 Associated Users
+  ul
+    each person in project.users
+      li
+        h3= person.name
+        p= person.title
+
+  a(class='btn btn-sm btn-warning' href='/project/#{ project.cleanName }/edit') Edit
+  form(action='/project/#{project.cleanName}/delete' class="inline-form" method="post")
+    div
+      input(onclick="return ConfirmDelete()" class="btn btn-danger btn-sm" type="submit" value="Delete")
+      input( type='hidden' name='_csrf' value='#{ _csrf }')
